@@ -1,12 +1,12 @@
 "use strict";
 
-alert(sumInput());
-alert(getMaxSubSum([-1, 2, 3, -9]));		// 5
-alert(getMaxSubSum([2, -1, 2, 3, -9]));		// 6
-alert(getMaxSubSum([-1, 2, 3, -9, 11]));	// 11
-alert(getMaxSubSum([-2, -1, 1, 2]));		// 3
-alert(getMaxSubSum([100, -9, 2, -3, 5]));	// 100
-alert(getMaxSubSum([1, 2, 3]));				// 6
+// alert(suminput());
+// alert(getmaxsubsum([-1, 2, 3, -9]));			// 5
+// alert(getmaxsubsum([2, -1, 2, 3, -9]));		// 6
+// alert(getmaxsubsum([-1, 2, 3, -9, 11]));		// 11
+// alert(getmaxsubsum([-2, -1, 1, 2]));			// 3
+// alert(getmaxsubsum([100, -9, 2, -3, 5]));	// 100
+// alert(getmaxsubsum([1, 2, 3]));				// 6
 
 function arrayBasics(){
 	let styles = ["Jazz", "Blues"];
