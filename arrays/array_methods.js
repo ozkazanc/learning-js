@@ -93,6 +93,10 @@ function Calculator(){
 function sortByAge(arr){
 	arr.sort((a, b) => a.age - b.age);
 }
+
+function getAverageAge(arr){
+	return arr.reduce((sum, item) => sum + item.age, 0) / arr.length;
+}
 // let john = { name: "John", age: 25 };
 // let pete = { name: "Pete", age: 30 };
 // let mary = { name: "Mary", age: 28 };
@@ -101,6 +105,7 @@ function sortByAge(arr){
 
 // let names = users.map(item => item.name);
 // sortByAge(users)
+// alert( getAverageAge(users) );
 
 // alert( users ); // John, May, Pete
 // alert( names ); // John, Pete, Mary
@@ -127,11 +132,85 @@ function sortByAge(arr){
 // alert( usersMapped[0].id ) // 1
 // alert( usersMapped[0].fullName ) // John Smith
 
+function shuffle(arr){
+	for(let i = arr.length - 1; i >= 0; i--){
+		let j = Math.floor(Math.random() * (i + 1));
+		
+		let temp = arr[i];
+		arr[i] = arr[j];
+		arr[j] = temp;
+	}
+}
+
+// counts of appearances for all possible permutations
+function testRandomness(){
+	let count = {
+	  '123': 0,
+	  '132': 0,
+	  '213': 0,
+	  '231': 0,
+	  '321': 0,
+	  '312': 0
+	};
+
+	for (let i = 0; i < 1000000; i++) {
+	  let array = [1, 2, 3];
+	  shuffle(array);
+	  count[array.join('')]++;
+	}
+
+	// show counts of all possible permutations
+	for (let key in count) {
+	  alert(`${key}: ${count[key]}`);
+	}
+}
+// alert("hi");
+// testRandomness();
+// alert("done");
 
 
+// Filter unique array members
+function unique(arr){
+	let res = [];
+	for(let item of arr){
+		if(!res.includes(item)){
+			res.push(item);
+		}
+	}
+	return res;
+}
 
+// let strings = ["Hare", "Krishna", "Hare", "Krishna",
+  // "Krishna", "Krishna", "Hare", "Hare", ":-O"
+// ];
 
+// alert( unique(strings) ); // Hare, Krishna, :-O
 
+// Create keyed object from array
+
+function groupById(array){
+	return array.reduce((acc, user) => 
+	{ acc[user.id] = user; 
+	  return acc;
+	}, {});
+}
+
+let users = [
+  {id: 'john', name: "John Smith", age: 20},
+  {id: 'ann', name: "Ann Smith", age: 24},
+  {id: 'pete', name: "Pete Peterson", age: 31},
+];
+
+let usersById = groupById(users);
+/*
+// after the call we should have:
+
+usersById = {
+  john: {id: 'john', name: "John Smith", age: 20}
+  ann: {id: 'ann', name: "Ann Smith", age: 24},
+  pete: {id: 'pete', name: "Pete Peterson", age: 31},
+}
+*/
 
 
 
